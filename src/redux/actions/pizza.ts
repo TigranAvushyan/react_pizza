@@ -10,7 +10,7 @@ export const fetchPizzas = (category: null | number = null, sortBy: string = "na
       dispatch({
         type: PizzaActionTypes.FETCH_PIZZA
       });
-      const res = await axios.get("http://localhost:3001/pizzas");
+      const res = await axios.get("https://tigran-react-pizza-default-rtdb.firebaseio.com/pizzas.json");
       const data = sortAndFilter<Pizza>(
         res.data,
         (a, b) => a[sortBy] > b[sortBy],
